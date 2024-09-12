@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% block content %}
   <form action="" method="post">{% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <p>Are you sure you want to delete the post "{{ object }}"?</p>
     <input class='btn btn-danger' type="submit" value="Confirm" />
+    <button class='btn btn-success' type="button" onclick="window.location.href='{% url 'post_detail' object.pk %}'">Return</button>
   </form>
 {% endblock %}

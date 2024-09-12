@@ -59,10 +59,6 @@ class DraftListView(LoginRequiredMixin,ListView):
         return Post.objects.filter(published_date__isnull=True).order_by('created_date')
 
 
-#######################################
-## Functions that require a pk match ##
-#######################################
-
 @login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
